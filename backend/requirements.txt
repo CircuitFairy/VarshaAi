@@ -14,3 +14,5 @@ python-multipart
 python-dotenv
 aiosqlite
 httpx
+aiocache
+supabase
