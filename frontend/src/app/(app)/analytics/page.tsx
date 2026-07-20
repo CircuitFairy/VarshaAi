@@ -259,7 +259,7 @@ export default function AnalyticsPage() {
                   <Tooltip
                     contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", fontSize: "12px", color: "hsl(var(--foreground))" }}
                     itemStyle={{ color: "hsl(var(--primary))" }}
-                    formatter={(value: number) => [`${value > 0 ? '+' : ''}${formatTemp(value, unitSystem)}${formatTempUnit(unitSystem)}`, 'Anomaly']}
+                    formatter={(value: any) => [`${value > 0 ? '+' : ''}${formatTemp(value, unitSystem)}${formatTempUnit(unitSystem)}`, 'Anomaly']}
                   />
                   <Legend />
                   <Bar dataKey="anomaly" name="Annual Anomaly">
