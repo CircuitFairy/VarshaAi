@@ -1,0 +1,330 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Geist", system-ui, sans-serif;
+}
+
+/* ============================================================
+   VarshaAI Climate OS — Design System
+   Extracted from official UI reference
+   ============================================================ */
+
+:root {
+  /* Surface System */
+  --surface-dim: #051424;
+  --surface: #051424;
+  --surface-container-lowest: #010f1f;
+  --surface-container-low: #0d1c2d;
+  --surface-container: #122131;
+  --surface-container-high: #1c2b3c;
+  --surface-container-highest: #273647;
+  --surface-bright: #2c3a4c;
+  --surface-variant: #273647;
+
+  /* Primary */
+  --primary: #a8e8ff;
+  --primary-container: #00d4ff;
+  --primary-fixed-dim: #3cd7ff;
+  --on-primary: #003642;
+  --on-primary-container: #00586b;
+
+  /* Secondary */
+  --secondary: #dcb8ff;
+  --secondary-container: #7701d0;
+
+  /* Tertiary (Success/Green) */
+  --tertiary: #6af7ba;
+  --tertiary-container: #49da9f;
+
+  /* Error */
+  --error: #ffb4ab;
+  --error-container: #93000a;
+  --on-error: #690005;
+
+  /* Text/Content */
+  --on-surface: #d4e4fa;
+  --on-surface-variant: #bbc9cf;
+  --on-background: #d4e4fa;
+
+  /* Borders */
+  --outline: #859398;
+  --outline-variant: #3c494e;
+
+  /* Misc */
+  --surface-tint: #3cd7ff;
+  --inverse-surface: #d4e4fa;
+  --inverse-on-surface: #233143;
+  --inverse-primary: #00677e;
+
+  /* Semantic Aliases */
+  --background: var(--surface-dim);
+  --foreground: var(--on-surface);
+  --card: var(--surface-container);
+  --card-foreground: var(--on-surface);
+  --border: var(--outline-variant);
+  --input: var(--surface-container-high);
+  --ring: var(--primary-fixed-dim);
+  --muted: var(--surface-container-high);
+  --muted-foreground: var(--on-surface-variant);
+  --accent: var(--primary-fixed-dim);
+  --accent-foreground: var(--on-primary);
+  --destructive: var(--error);
+  --radius: 0.5rem;
+
+  /* Chart colors */
+  --chart-1: var(--primary-fixed-dim);
+  --chart-2: var(--tertiary);
+  --chart-3: #fb923c;
+  --chart-4: var(--secondary);
+  --chart-5: var(--error);
+
+  /* Sidebar */
+  --sidebar: var(--surface-container-low);
+  --sidebar-foreground: var(--on-surface);
+  --sidebar-primary: var(--primary-fixed-dim);
+  --sidebar-primary-foreground: var(--on-primary);
+  --sidebar-accent: var(--surface-container-high);
+  --sidebar-accent-foreground: var(--on-surface);
+  --sidebar-border: var(--outline-variant);
+  --sidebar-ring: var(--primary-fixed-dim);
+}
+
+.light {
+  /* Surface System (Light Mode) */
+  --surface-dim: #f3f4f6; /* Gray 100 */
+  --surface: #ffffff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f9fafb; /* Gray 50 */
+  --surface-container: #f3f4f6; /* Gray 100 */
+  --surface-container-high: #e5e7eb; /* Gray 200 */
+  --surface-container-highest: #d1d5db; /* Gray 300 */
+  --surface-bright: #ffffff;
+  --surface-variant: #e5e7eb;
+
+  /* Primary */
+  --primary: #007acc; /* Darker cyan/blue for visibility */
+  --primary-container: #bae6fd;
+  --primary-fixed-dim: #0284c7; /* Sky 600 */
+  --on-primary: #ffffff;
+  --on-primary-container: #0c4a6e;
+
+  /* Secondary */
+  --secondary: #9333ea; /* Purple 600 */
+  --secondary-container: #f3e8ff;
+
+  /* Tertiary (Success/Green) */
+  --tertiary: #10b981; /* Emerald 500 */
+  --tertiary-container: #d1fae5;
+
+  /* Error */
+  --error: #ef4444; /* Red 500 */
+  --error-container: #fee2e2;
+  --on-error: #ffffff;
+
+  /* Text/Content */
+  --on-surface: #111827; /* Gray 900 */
+  --on-surface-variant: #4b5563; /* Gray 600 */
+  --on-background: #111827;
+
+  /* Borders */
+  --outline: #9ca3af; /* Gray 400 */
+  --outline-variant: #d1d5db; /* Gray 300 */
+
+  /* Misc */
+  --surface-tint: #0284c7;
+  --inverse-surface: #1f2937;
+  --inverse-on-surface: #f9fafb;
+  --inverse-primary: #bae6fd;
+
+  /* Chart colors (adapted for light mode) */
+  --chart-1: #0284c7;
+  --chart-2: #10b981;
+  --chart-3: #ea580c; /* Orange 600 */
+  --chart-4: #9333ea;
+  --chart-5: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--on-primary);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--on-primary);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
+
+/* ============================================================
+   VarshaAI Utility Classes
+   ============================================================ */
+
+/* Surface cards */
+.os-card {
+  background: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  border-radius: 0.75rem;
+}
+
+.os-card-elevated {
+  background: var(--surface-container-high);
+  border: 1px solid var(--outline-variant);
+  border-radius: 0.75rem;
+}
+
+/* Glassmorphism — used only on map overlays */
+.glass {
+  background: rgba(5, 20, 36, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(18, 33, 49, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Typography utilities */
+.font-display {
+  font-family: "Geist", system-ui, sans-serif;
+}
+
+.font-data {
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.05em;
+}
+
+.label-caps {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 16px;
+}
+
+/* Status indicators */
+.status-nominal {
+  color: var(--tertiary);
+}
+
+.status-warning {
+  color: #fb923c;
+}
+
+.status-critical {
+  color: var(--error);
+}
+
+/* Gradient text */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, var(--primary-fixed-dim), var(--primary));
+}
+
+/* Active nav item */
+.nav-active {
+  color: var(--primary-fixed-dim);
+  border-left: 3px solid var(--primary-fixed-dim);
+  background: rgba(60, 215, 255, 0.06);
+}
+
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 99px;
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(60, 215, 255, 0.15), 0 0 60px rgba(60, 215, 255, 0.05);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(255, 180, 171, 0.2);
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes rain {
+  0% { transform: translateY(-100px) scaleY(1); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(100vh) scaleY(1.5); opacity: 0; }
+}
+
+.animate-rain {
+  animation: rain linear infinite;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-container) 25%, var(--surface-container-high) 50%, var(--surface-container) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
