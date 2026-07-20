@@ -31,7 +31,7 @@ export default function AIInsightsPage() {
     const stateObj = indianLocations.find(s => s.state === selectedStateName);
     const regionObj = stateObj?.regions.find(r => r.name === selectedDistrictName);
     if (stateObj && regionObj) {
-      fetchDataForLocation(stateObj.state, regionObj);
+      fetchDataForLocation(stateObj.state, regionObj.name);
     }
   };
 
